@@ -10,7 +10,7 @@ app.use(cors({ origin: true }));
 app.use(express.json());
 app.get("/", (req, res) => {
   res.status(200).json({
-    message: "Sucess !",
+    message: "Success !",
   });
 });
 
@@ -22,7 +22,7 @@ app.post("/payment/create", async (req, res) => {
       currency: "usd",
     });
     res.status(201).json({
-      clientsecret: paymentIntent.client_secret,
+      clientSecret: paymentIntent.client_secret,
     });
   } else {
     res.status(403).json({
